@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app with a static HTML page",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "author": "Your Name",
+  "license": "ISC"
+}
