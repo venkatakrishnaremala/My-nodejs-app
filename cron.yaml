@@ -1,0 +1,5 @@
+cron:
+- description: "Run the Node.js app health check"
+  url: /healthcheck
+  schedule: "*/5 * * * *"  # Every 5 minutes
+  timeZone: "UTC"
