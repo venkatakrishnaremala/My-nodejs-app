@@ -1,5 +1,5 @@
+version: 1
 cron:
-- description: "Run the Node.js app health check"
-  url: /healthcheck
-  schedule: "*/5 * * * *"  # Every 5 minutes
-  timeZone: "UTC"
+  - name: "example-task"
+    url: "/YOUR_CRON_TASK"
+    schedule: "0 0 * * *"
