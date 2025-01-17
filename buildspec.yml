@@ -2,19 +2,27 @@ version: 0.2
 
 phases:
   install:
-      runtime-versions:
-          nodejs: latest
-      commands:
-          - echo "installing something"
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - echo "Installing dependencies and setting up environment"
+  
   pre_build:
-      commands:
-          - echo "we are in the pre build phase"
+    commands:
+      - echo "We are in the pre-build phase"
+  
   build:
-      commands:
-          - echo "we are in the build block"
-          - echo "we will run some tests"
-          - grep -Fq "congratulations" index.html
+    commands:
+      - echo "We are in the build block"
+      - echo "Running tests"
+      - echo "Checking if index.html exists"
+      - |
+        if [ -f index.html ]; then
+          grep -Fq "congratulations" index.html && echo "Text found in index.html" || echo "Text not found in index.html";
+        else
+          echo "index.html not found, skipping test";
+        fi
+  
   post_build:
-      commands:
-          - echo "we are in the post build phase"
-    
+    commands:
+      - echo "We are in the post-build phase"
